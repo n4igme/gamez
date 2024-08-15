@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <title>the Snake</title>
     <link rel="stylesheet" href="https://n4igme.github.io/assets/css/random/custom.css" />
+    <style>
+        /* Styles for the unordered list */
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Styles for list items */
+        ul li {
+            background-color: #f4f4f4; /* Light gray background for list items */
+            border: 1px solid #ddd; /* Light gray border around list items */
+            border-radius: 5px; /* Rounded corners for list items */
+            padding: 10px; /* Add padding inside list items */
+            margin-bottom: 5px; /* Space between list items */
+            font-family: Arial, sans-serif; /* Font for list items */
+            font-size: 16px; /* Font size for list items */
+            color: #333; /* Text color for list items */
+        }
+
+        ul li strong {
+            color: #007bff; /* Color for strong text inside list items */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <script src="snake.js"></script>
+    <div class="container" style="text-align: center;">
+        <h1>Welcome to the Snake!</h1>
+        <canvas id="gameCanvas" width="601" height="401"></canvas>
+        <p>Use the arrow keys to control the snake:</p>
+        <ul>
+            <li><strong>Arrow Up:</strong> Move Up</li>
+            <li><strong>Arrow Down:</strong> Move Down</li>
+            <li><strong>Arrow Left:</strong> Move Left</li>
+            <li><strong>Arrow Right:</strong> Move Right</li>
+        </ul>
+        <p>Your goal is to eat the red fruit to grow the snake. Avoid running into the walls or the snake’s own tail.</p>
+        <p>Good luck and have fun!</p>
     </div>
+    <script src="snake.js"></script>
 </body>
 </html>
