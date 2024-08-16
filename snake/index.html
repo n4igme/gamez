@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,50 +9,65 @@
     <style>
         /* Make the canvas responsive */
         #gameCanvas {
-            width: 100%; /* Full width of the container */
-            height: auto; /* Height adjusts to maintain aspect ratio */
-            max-width: 100%; /* Prevent the canvas from exceeding the container width */
-            border: 1px solid #ddd; /* Optional: add a border to the canvas */
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border: 1px solid #ddd;
         }
 
         /* Style for the button container */
         .button-container {
-            margin-top: 20px; /* Space above the buttons */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
         }
 
         /* Style for the buttons */
         .control-button {
-            background-color: #007bff; /* Blue background color */
-            color: white; /* White text color */
-            border: none; /* Remove default border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px 20px; /* Add padding inside buttons */
-            margin: 5px; /* Space between buttons */
-            font-family: Arial, sans-serif; /* Font for buttons */
-            font-size: 16px; /* Font size for buttons */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s; /* Smooth background color transition */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .control-button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
         }
 
         .control-button:focus {
-            outline: none; /* Remove default outline */
+            outline: none;
         }
     </style>
 </head>
+
 <body>
     <div class="container" style="text-align: center;">
         <h1>Welcome to the Snake!</h1>
         <canvas id="gameCanvas" width="601" height="401"></canvas>
         <p>Use the buttons below to control the snake:</p>
         <div class="button-container">
-            <button class="control-button" id="upButton"><strong>Arrow Up:</strong> Move Up</button>
-            <button class="control-button" id="downButton"><strong>Arrow Down:</strong> Move Down</button>
-            <button class="control-button" id="leftButton"><strong>Arrow Left:</strong> Move Left</button>
-            <button class="control-button" id="rightButton"><strong>Arrow Right:</strong> Move Right</button>
+            <div class="row">
+                <button class="control-button" id="leftButton"><strong>←</strong></button>
+                <button class="control-button" id="upButton"><strong>↑</strong></button>
+                <button class="control-button" id="rightButton"><strong>→</strong></button>
+            </div>
+            <div class="row">
+                
+                <button class="control-button" id="downButton"><strong>↓</strong></button>
+                
+            </div>
         </div>
         <p>Your goal is to eat the red fruit to grow the snake. Avoid running into the walls or the snake’s own tail.</p>
         <p>Good luck and have fun!</p>
@@ -67,14 +83,15 @@
             snake.setDirection(0, 1);
             console.log('Move Down');
         });
-        document.getElementById('leftButton').addEventListener('click', () => {
-            snake.setDirection(-1, 0);
-            console.log('Move Left');
-        });
         document.getElementById('rightButton').addEventListener('click', () => {
             snake.setDirection(1, 0);
             console.log('Move Right');
         });
+        document.getElementById('leftButton').addEventListener('click', () => {
+            snake.setDirection(-1, 0);
+            console.log('Move Left');
+        });
     </script>
 </body>
+
 </html>
